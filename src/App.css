@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+#root {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+	width: 60px;
+	aspect-ratio: 2;
+	--_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+	background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+	background-size: calc(100% / 3) 50%;
+	animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+	20% {
+		background-position: 0% 0%, 50% 50%, 100% 50%;
+	}
+	40% {
+		background-position: 0% 100%, 50% 0%, 100% 50%;
+	}
+	60% {
+		background-position: 0% 50%, 50% 100%, 100% 0%;
+	}
+	80% {
+		background-position: 0% 50%, 50% 50%, 100% 100%;
+	}
+}
+
+.input {
+	position: relative;
+	display: flex;
+	align-items: center;
+	max-width: 400px;
+	margin: 1rem;
+}
+
+.input input {
+	width: 100%;
+	padding: 10px 15px;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	font-size: 16px;
+	outline: none;
+	transition: border-color 0.3s ease-in-out;
+}
+
+.input input:focus {
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-container {
+	color: #000;
+}
+
+.search-container button {
+	margin: 0rem 1rem;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	border-radius: 5px;
+	padding: 30px;
+	color: black;
+	width: 330px;
+}
+
+.title {
+	font-family: 'Pacifico', cursive;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.weather-info {
+	display: flex;
+	justify-content: space-between;
+	text-align: left;
+	align-items: end;
+}
+
+.value {
+	text-align: right;
+	text-shadow: 0.5px 0.5px 0 black;
+}
+
+.header,
+.footer {
+	grid-column: span 3;
+	/* background-color: lightblue; */
+}
+
+.middle {
+	/* background-color: lightcoral; */
+	display: flex;
+	flex-direction: column;
+	padding-left: 50px;
+	padding-right: 10px;
+	grid-column: span 2;
+}
+
+.middle h1 {
+	font-size: 1.5rem;
+}
+
+.item {
+	/* background-color: lightgray; */
+	/* padding: 20px; */
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	/* width: 100px; */
+}
+
+.icon {
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+@media (width >=510px) {
+	.grid-container {
+		width: 440px;
+	}
+
+	@media (width >=768px) {
+		.grid-container {
+			width: 600px;
+		}
+	}
+}
